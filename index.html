@@ -1,0 +1,286 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>🎉 Happy Birthday! 🎂</title>
+    <link rel="stylesheet" href="style.css" />
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600;700;800&family=Inter:wght@300;400;500;600&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css" />
+</head>
+<body>
+    <!-- Floating Emojis -->
+    <div class="floating-emojis">
+        <div class="emoji-float" style="top: 10%; left: 10%;">🎈</div>
+        <div class="emoji-float" style="top: 20%; right: 15%;">🎂</div>
+        <div class="emoji-float" style="top: 40%; left: 5%;">🎉</div>
+        <div class="emoji-float" style="bottom: 30%; right: 10%;">🎁</div>
+        <div class="emoji-float" style="bottom: 20%; left: 20%;">🥳</div>
+        <div class="emoji-float" style="top: 60%; right: 25%;">✨</div>
+        <div class="emoji-float" style="bottom: 40%; left: 80%;">🎊</div>
+        <div class="emoji-float" style="top: 30%; left: 70%;">🎀</div>
+    </div>
+
+    <!-- Landing Section -->
+    <section id="landing" class="landing-section">
+        <div class="container">
+            <div class="landing-content">
+                <h1 class="main-title">🎉 Happy Birthday! 🎂</h1>
+                <p class="subtitle">Welcome to your special celebration! ✨</p>
+                <button class="start-button" onclick="showNameModal()">
+                    <i class="fas fa-rocket"></i>
+                    Start the Surprise! 🚀
+                </button>
+            </div>
+        </div>
+    </section>
+
+    <!-- Navigation Bar -->
+    <nav id="navbar" class="navbar hidden">
+        <div class="nav-container">
+            <div class="nav-links">
+                <button onclick="scrollToSection('landing')" class="nav-link">
+                    <i class="fas fa-home"></i>
+                    Home
+                </button>
+                <button onclick="scrollToSection('video')" class="nav-link">
+                    <i class="fas fa-play"></i>
+                    Video
+                </button>
+                <button onclick="scrollToSection('gallery')" class="nav-link">
+                    <i class="fas fa-images"></i>
+                    Gallery
+                </button>
+                <button onclick="scrollToSection('memories')" class="nav-link">
+                    <i class="fas fa-heart"></i>
+                    Memories
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Username Modal -->
+    <div id="nameModal" class="modal hidden">
+        <div class="modal-content glass-effect">
+            <div class="modal-text-center">
+                <div class="modal-emoji">🎈</div>
+                <h2>What's your name, birthday star? ⭐</h2>
+                <input type="text" id="nameInput" placeholder="Enter your name here..." class="name-input" />
+                <button onclick="submitName()" class="submit-button">
+                    Continue the Magic! ✨
+                </button>
+            </div>
+        </div>
+    </div>
+
+    <!-- Surprise Modal -->
+    <div id="surpriseModal" class="modal hidden">
+        <div class="modal-content glass-effect">
+            <div class="modal-text-center">
+                <div class="modal-emoji">🎁</div>
+                <h2>Hey <span id="userName"></span>! 👋</h2>
+                <p>I've prepared something special for you! Do you want to see your surprise? 🤔</p>
+                <div class="button-group">
+                    <button onclick="showSurprise()" class="yes-button">Yes! Show me! 🤩</button>
+                    <button onclick="hideSurprise()" class="no-button">Maybe later 😊</button>
+                </div>
+            </div>
+        </div>
+    </div>
+
+    <!-- Video Section -->
+    <section id="video" class="content-section video-section hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2>🎬 Your Special Video Message! 📹</h2>
+                <p>Here's a heartfelt message just for you on your special day! 💖</p>
+            </div>
+            <div class="video-container">
+                <div class="video-wrapper">
+                    <iframe
+                        src="https://www.youtube.com/embed/dQw4w9WgXcQ"
+                        title="Birthday Video Message"
+                        frameborder="0"
+                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
+                        allowfullscreen
+                    ></iframe>
+                </div>
+                <div class="video-caption">
+                    <p>Made with love just for you! 💕 Hope it brings a smile to your face! 😊</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Photo Gallery -->
+    <section id="gallery" class="content-section gallery-section hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2>📸 Birthday Photo Gallery 🖼️</h2>
+                <p>A collection of amazing moments and beautiful birthday celebrations! ✨</p>
+            </div>
+            <div class="photo-grid">
+                <div class="photo-item" style="animation-delay: 0.2s;">
+                    <div class="photo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1530103862676-de8c9debad1d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                            alt="Birthday celebration with balloons"
+                        />
+                        <div class="photo-overlay"><p>🎈 Balloon Celebration</p></div>
+                    </div>
+                </div>
+                <div class="photo-item" style="animation-delay: 0.4s;">
+                    <div class="photo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                            alt="Birthday cake with candles"
+                        />
+                        <div class="photo-overlay"><p>🎂 Birthday Cake</p></div>
+                    </div>
+                </div>
+                <div class="photo-item" style="animation-delay: 0.6s;">
+                    <div class="photo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1464349153735-7db50ed83c84?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                            alt="Birthday party with friends"
+                        />
+                        <div class="photo-overlay"><p>🥳 Party Time</p></div>
+                    </div>
+                </div>
+                <div class="photo-item" style="animation-delay: 0.8s;">
+                    <div class="photo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1513475382585-d06e58bcb0e0?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                            alt="Birthday presents and gifts"
+                        />
+                        <div class="photo-overlay"><p>🎁 Birthday Gifts</p></div>
+                    </div>
+                </div>
+                <div class="photo-item" style="animation-delay: 1.0s;">
+                    <div class="photo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1517263904808-5dc91e3e7044?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                            alt="Birthday party decorations"
+                        />
+                        <div class="photo-overlay"><p>🎊 Party Decorations</p></div>
+                    </div>
+                </div>
+                <div class="photo-item" style="animation-delay: 1.2s;">
+                    <div class="photo-card">
+                        <img
+                            src="https://images.unsplash.com/photo-1515934751635-c81c6bc9a2d8?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=600"
+                            alt="Birthday celebration with confetti"
+                        />
+                        <div class="photo-overlay"><p>✨ Confetti Magic</p></div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Memories Section -->
+    <section id="memories" class="content-section memories-section hidden">
+        <div class="container">
+            <div class="section-header">
+                <h2>💕 Beautiful Memories Together 🌟</h2>
+                <p>Cherished moments and unforgettable times we've shared! 📸</p>
+            </div>
+            <div class="memories-grid">
+                <div class="memory-card" style="animation-delay: 0.3s;">
+                    <div class="memory-gradient pink-purple">
+                        <div class="memory-content">
+                            <img
+                                src="https://images.unsplash.com/photo-1511632765486-a01980e01a18?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500"
+                                alt="Friends celebrating together"
+                            />
+                            <h3>🤗 Great Times Together</h3>
+                            <p>
+                                Remember all those amazing moments we've shared? The laughter, the adventures, and
+                                the incredible memories! 💫
+                            </p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-card" style="animation-delay: 0.5s;">
+                    <div class="memory-gradient blue-mint">
+                        <div class="memory-content">
+                            <img
+                                src="https://images.unsplash.com/photo-1529156069898-49953e39b3ac?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500"
+                                alt="Friends enjoying outdoor activities"
+                            />
+                            <h3>🌟 Adventure Buddies</h3>
+                            <p>From spontaneous adventures to planned celebrations, we've created the most wonderful memories together! 🚀</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-card" style="animation-delay: 0.7s;">
+                    <div class="memory-gradient yellow-orange">
+                        <div class="memory-content">
+                            <img
+                                src="https://images.unsplash.com/photo-1543269664-7eef42226a21?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500"
+                                alt="Friends taking selfie together"
+                            />
+                            <h3>📱 Perfect Moments</h3>
+                            <p>Every selfie tells a story, and ours are filled with joy, laughter, and the best friendship vibes! 😄</p>
+                        </div>
+                    </div>
+                </div>
+                <div class="memory-card" style="animation-delay: 0.9s;">
+                    <div class="memory-gradient purple-pink">
+                        <div class="memory-content">
+                            <img
+                                src="https://images.unsplash.com/photo-1522202176988-66273c2fd55f?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&h=500"
+                                alt="Close friends sharing happy moments"
+                            />
+                            <h3>💖 Friendship Goals</h3>
+                            <p>Through thick and thin, our friendship has been a constant source of happiness and support! 🤝</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="birthday-message">
+                <div class="message-card">
+                    <h3>🎉 Happy Birthday! 🎂</h3>
+                    <p>Here's to another year of amazing adventures, incredible memories, and the best friendship ever! 🥳✨</p>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer id="footer" class="footer-section hidden">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-emojis">🎈🎂🎉</div>
+                <p class="footer-title">Made with love for your special day!</p>
+                <p class="footer-subtitle">Hope your birthday is as amazing as you are! 💖</p>
+                <div class="footer-buttons">
+                    <button class="footer-btn">
+                        <i class="fas fa-heart"></i>
+                        Share the Love
+                    </button>
+                    <button class="footer-btn">
+                        <i class="fas fa-download"></i>
+                        Save Memories
+                    </button>
+                </div>
+                <div class="footer-copyright">
+                    <p>© 2024 @harshith_pathipaka - Made with love for special celebrations</p>
+                </div>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Toast Notification -->
+    <div id="toast" class="toast hidden">
+        <div class="toast-content">
+            <h4 id="toastTitle"></h4>
+            <p id="toastMessage"></p>
+        </div>
+    </div>
+
+    <script src="script.js" defer></script>
+    <link rel="stylesheet" href="style.css" />
+
+</body>
+</html>
