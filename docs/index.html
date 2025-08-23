@@ -89,27 +89,13 @@
     </div>
 
     <!-- Video Section -->
-    <section id="video" class="content-section video-section hidden">
-        <div class="container">
-            <div class="section-header">
-                <h2>🎬 Your Special Video Message! 📹</h2>
-                <p>Here's a heartfelt message just for you on your special day! 💖</p>
-            </div>
-            <div class="video-container">
-                <div class="video-wrapper">
-                    <iframe
-                        src="video.mp4"
-                        title="Birthday Video Message"
-                        frameborder="0"
-                        allow="accelerometer; autoplay; clipboard-write; encrypted-media; gyroscope; picture-in-picture"
-                        allowfullscreen
-                    ></iframe>
-                </div>
-                <div class="video-caption">
-                    <p>Made with love just for you! 💕 Hope it brings a smile to your face! 😊</p>
-                </div>
-            </div>
-        </div>
+     <div class="video-section" id="videoSection">
+        <div class="video-container">
+            <h3 class="video-title">Special Birthday Video for You! 🎬</h3>
+           <video id="birthdayVideo" controls controlsList="nodownload" playsinline webkit-playsinline preload="metadata" poster="">
+  <source src="video.mp4" type="video/mp4">
+  Your browser does not support the video tag.
+</video>
     </section>
 
     <!-- Photo Gallery -->
